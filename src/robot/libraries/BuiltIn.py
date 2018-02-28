@@ -427,12 +427,13 @@ class _Converter(_BuiltInBase):
         """Returns a list containing given items.
 
         The returned list can be assigned both to ``${scalar}`` and ``@{list}``
-        variables.
+        variables. Omitting arguments creates an empty list.
 
         Examples:
-        | @{list} =   | Create List | a    | b    | c    |
-        | ${scalar} = | Create List | a    | b    | c    |
-        | ${ints} =   | Create List | ${1} | ${2} | ${3} |
+        | @{list} =         | Create List | a    | b    | c    |
+        | ${scalar} =       | Create List | a    | b    | c    |
+        | ${ints} =         | Create List | ${1} | ${2} | ${3} |
+        | @{empty_list} =   | Create List |      |      |      |
         """
         return list(items)
 
